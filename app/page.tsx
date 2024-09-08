@@ -1,129 +1,88 @@
+import { BiChevronRight } from "react-icons/bi";
 import Header from "./components/Header";
-import { Card, CardHeader, CardFooter, Image, Button } from "@nextui-org/react";
-import SubHeader from "./components/SubHeader";
+import { Button } from "@nextui-org/react";
+import { BackgroundBeamsWithCollision } from "./components/ui/background-beams-with-collision";
+import { FeaturesSectionDemo } from "./components/FeaturesSection";
+import { InfiniteMovingCards } from "./components/ui/infinite-moving-card";
+import { Prata } from "next/font/google";
+
+const prata = Prata({ subsets: ["latin"], weight: "400" });
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Header />
-      <SubHeader />
 
-      <div className="gap-4 grid grid-cols-12 grid-rows-2 px-8 py-4">
-        <Card className="col-span-12 sm:col-span-4 h-[300px]" isPressable>
-          <CardHeader className="absolute z-10 top-1 flex-col !items-start">
-            <p className="text-tiny text-white/60 uppercase font-bold">
-              What to watch
-            </p>
-            <h4 className="text-white font-medium text-large">
-              Stream the Acme event
-            </h4>
-          </CardHeader>
-          <Image
-            removeWrapper
-            alt="Card background"
-            className="z-0 w-full h-full object-cover"
-            src="https://nextui.org/images/card-example-4.jpeg"
+      <BackgroundBeamsWithCollision>
+        <div className="flex flex-col justify-center items-center min-h-screen px-24 py-12 gap-6">
+          <h1
+            className={`${prata.className} text-6xl font-bold text-center max-w-5xl`}
+          >
+            <span className="bg-gradient-to-br from-primary to-secondary bg-clip-text text-transparent font-extrabold mr-3">
+              Discover
+            </span>
+            Stunning Artworks and Designs from Talented Creators.
+          </h1>
+          <p className="text-xl">
+            Immerse yourself in a world of creativity and inspiration from
+            emerging and established artists.
+          </p>
+          <Button
+            color="primary"
+            variant="shadow"
+            endContent={<BiChevronRight />}
+          >
+            Explore the Gallery
+          </Button>
+
+          <InfiniteMovingCards
+            items={testimonials}
+            direction="left"
+            speed="slow"
+            pauseOnHover={false}
+            className="mt-8"
           />
-        </Card>
-        <Card className="col-span-12 sm:col-span-4 h-[300px]" isPressable>
-          <CardHeader className="absolute z-10 top-1 flex-col !items-start">
-            <p className="text-tiny text-white/60 uppercase font-bold">
-              Plant a tree
-            </p>
-            <h4 className="text-white font-medium text-large">
-              Contribute to the planet
-            </h4>
-          </CardHeader>
-          <Image
-            removeWrapper
-            alt="Card background"
-            className="z-0 w-full h-full object-cover"
-            src="https://nextui.org/images/card-example-3.jpeg"
-          />
-        </Card>
-        <Card className="col-span-12 sm:col-span-4 h-[300px]" isPressable>
-          <CardHeader className="absolute z-10 top-1 flex-col !items-start">
-            <p className="text-tiny text-white/60 uppercase font-bold">
-              Supercharged
-            </p>
-            <h4 className="text-white font-medium text-large">
-              Creates beauty like a beast
-            </h4>
-          </CardHeader>
-          <Image
-            removeWrapper
-            alt="Card background"
-            className="z-0 w-full h-full object-cover"
-            src="https://nextui.org/images/card-example-2.jpeg"
-          />
-        </Card>
-        <Card
-          isFooterBlurred
-          className="w-full h-[300px] col-span-12 sm:col-span-5"
-        >
-          <CardHeader className="absolute z-10 top-1 flex-col items-start">
-            <p className="text-tiny text-white/60 uppercase font-bold">New</p>
-            <h4 className="text-black font-medium text-2xl">Acme camera</h4>
-          </CardHeader>
-          <Image
-            removeWrapper
-            alt="Card example background"
-            className="z-0 w-full h-full scale-125 -translate-y-6 object-cover"
-            src="https://nextui.org/images/card-example-6.jpeg"
-          />
-          <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
-            <div>
-              <p className="text-black text-tiny">Available soon.</p>
-              <p className="text-black text-tiny">Get notified.</p>
-            </div>
-            <Button
-              className="text-tiny"
-              color="primary"
-              radius="full"
-              size="sm"
-            >
-              Notify Me
-            </Button>
-          </CardFooter>
-        </Card>
-        <Card
-          isFooterBlurred
-          className="w-full h-[300px] col-span-12 sm:col-span-7"
-        >
-          <CardHeader className="absolute z-10 top-1 flex-col items-start">
-            <p className="text-tiny text-white/60 uppercase font-bold">
-              Your day your way
-            </p>
-            <h4 className="text-white/90 font-medium text-xl">
-              Your checklist for better sleep
-            </h4>
-          </CardHeader>
-          <Image
-            removeWrapper
-            alt="Relaxing app background"
-            className="z-0 w-full h-full object-cover"
-            src="https://nextui.org/images/card-example-5.jpeg"
-          />
-          <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
-            <div className="flex flex-grow gap-2 items-center">
-              <Image
-                alt="Breathing app icon"
-                className="rounded-full w-10 h-11 bg-black"
-                src="https://nextui.org/images/breathing-app-icon.jpeg"
-              />
-              <div className="flex flex-col">
-                <p className="text-tiny text-white/60">Breathing App</p>
-                <p className="text-tiny text-white/60">
-                  Get a good nights sleep.
-                </p>
-              </div>
-            </div>
-            <Button radius="full" size="sm">
-              Get App
-            </Button>
-          </CardFooter>
-        </Card>
+        </div>
+      </BackgroundBeamsWithCollision>
+
+      <FeaturesSectionDemo />
+
+      <div className="w-full mt-4 p-10 text-center opacity-100 z-50">
+        © 2024 DPT Team. All rights reserved.
       </div>
     </main>
   );
 }
+
+const testimonials = [
+  {
+    quote:
+      "Every child is an artist. The problem is how to remain an artist once we grow up. Art is the elimination of the unnecessary, and it washes away from the soul the dust of everyday life. It is not what you see, but what you make others see.",
+    name: "Pablo Picasso",
+    title: "Famous Painter",
+  },
+  {
+    quote:
+      "Art enables us to find ourselves and lose ourselves at the same time. It is a way of recognizing oneself and a way of transforming our perspective. Through art, we can express the inexpressible, the feelings too deep for words.",
+    name: "Thomas Merton",
+    title: "Writer and Theologian",
+  },
+  {
+    quote:
+      "You dont take a photograph, you make it. Photography, like all art, is about depth of feeling, not depth of field. It's about capturing the moment, the emotion, the essence, and freezing it in time forever.",
+    name: "Ansel Adams",
+    title: "Photographer",
+  },
+  {
+    quote:
+      "The principles of true art is not to portray, but to evoke emotions, thoughts, and memories that linger long after the artwork is seen. Art speaks where words are unable to explain, offering a bridge between the heart and mind.",
+    name: "Jerzy Kosinski",
+    title: "Novelist",
+  },
+  {
+    quote:
+      "Creativity takes courage, for true art is a journey into the unknown. It is a way of seeking beauty, finding meaning in chaos, and courageously facing the raw truth that lies within us all. The artists role is to defy convention and break boundaries.",
+    name: "Henri Matisse",
+    title: "French Artist",
+  },
+];

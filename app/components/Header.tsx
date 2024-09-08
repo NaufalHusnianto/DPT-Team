@@ -11,9 +11,10 @@ import {
   NavbarMenuItem,
   Link,
   Button,
+  Input,
 } from "@nextui-org/react";
 import { AcmeLogo } from "./icon/AcmeLogo";
-import { ThemeSwitcher } from "./ThemeSwitcher";
+import { SearchIcon } from "./icon/SearchIcon";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -40,18 +41,18 @@ export default function Header() {
         />
         <NavbarBrand>
           <AcmeLogo />
-          <p className="font-bold text-inherit">DPT Team</p>
+          <p className="font-bold text-inherit">ArtFusion</p>
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link color="foreground" href="#">
+        <NavbarItem isActive>
+          <Link aria-current="page" href="#">
             Find Design
           </Link>
         </NavbarItem>
-        <NavbarItem isActive>
-          <Link href="#" aria-current="page">
+        <NavbarItem>
+          <Link href="#" color="foreground">
             Inspiration
           </Link>
         </NavbarItem>
@@ -60,17 +61,22 @@ export default function Header() {
             Jobs
           </Link>
         </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="#">
+            Hire Freelancer
+          </Link>
+        </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
-        <NavbarItem>
-          <ThemeSwitcher />
-        </NavbarItem>
         <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
+          <Input placeholder="Search" startContent={<SearchIcon />} size="sm" />
         </NavbarItem>
+        {/* <NavbarItem className="hidden lg:flex">
+          <Link href="#">Login</Link>
+        </NavbarItem> */}
         <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
-            Sign Up
+          <Button as={Link} color="primary" href="#" variant="flat" size="sm">
+            Sign In
           </Button>
         </NavbarItem>
       </NavbarContent>
