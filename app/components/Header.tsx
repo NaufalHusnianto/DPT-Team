@@ -67,10 +67,16 @@ export default function Header() {
           </Link>
         </NavbarItem>
         <NavbarItem>
+          <Link href="/blog" color="foreground">
+            Blog
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
           <Link color="foreground" href="#">
             Hire Freelancer
           </Link>
         </NavbarItem>
+        
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">

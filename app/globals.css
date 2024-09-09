@@ -30,4 +30,9 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  
+}
+.hover-neon:hover {
+  box-shadow: 0 0 15px 2px rgba(255, 255, 255, 0.8);
+  border-color: white;
 }
