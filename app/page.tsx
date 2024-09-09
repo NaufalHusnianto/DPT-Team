@@ -1,10 +1,11 @@
 import { BiChevronRight } from "react-icons/bi";
 import Header from "./components/Header";
-import { Button } from "@nextui-org/react";
+import { Button, Input } from "@nextui-org/react";
 import { BackgroundBeamsWithCollision } from "./components/ui/background-beams-with-collision";
 import { FeaturesSectionDemo } from "./components/FeaturesSection";
 import { InfiniteMovingCards } from "./components/ui/infinite-moving-card";
 import { Prata } from "next/font/google";
+import Footer from "./components/Footer";
 
 const prata = Prata({ subsets: ["latin"], weight: "400" });
 
@@ -14,16 +15,16 @@ export default function Home() {
       <Header />
 
       <BackgroundBeamsWithCollision>
-        <div className="flex flex-col justify-center items-center min-h-screen px-24 py-12 gap-6">
+        <div className="flex flex-col items-center lg:min-h-screen max-w-6xl px-24 lg:py-28 py-12 gap-6">
           <h1
-            className={`${prata.className} text-6xl font-bold text-center max-w-5xl`}
+            className={`${prata.className} lg:text-6xl text-4xl font-bold text-center lg:max-w-5xl max-w-sm`}
           >
             <span className="bg-gradient-to-br from-primary to-secondary bg-clip-text text-transparent font-extrabold mr-3">
               Discover
             </span>
             Stunning Artworks and Designs from Talented Creators.
           </h1>
-          <p className="text-xl">
+          <p className="text-xl text-center lg:max-w-5xl max-w-sm">
             Immerse yourself in a world of creativity and inspiration from
             emerging and established artists.
           </p>
@@ -31,6 +32,7 @@ export default function Home() {
             color="primary"
             variant="shadow"
             endContent={<BiChevronRight />}
+            className="max-w-sm"
           >
             Explore the Gallery
           </Button>
@@ -47,9 +49,29 @@ export default function Home() {
 
       <FeaturesSectionDemo />
 
-      <div className="w-full mt-4 p-10 text-center opacity-100 z-50">
-        © 2024 DPT Team. All rights reserved.
+      <div className="flex flex-col justify-center items-center h-96 border-b border-t border-foreground-100">
+        <h1 className={`${prata.className} text-5xl`}>
+          Join our 80M+ users today
+        </h1>
+        <p>
+          Join thousands of teams using ArtFusion to do their best work yet.
+        </p>
+        <div className="flex items-center gap-4 mt-4">
+          <Input
+            type="email"
+            label="Email"
+            variant="bordered"
+            placeholder="Enter your email"
+            defaultValue="user@email.com"
+            className="max-w-xs"
+          />
+          <Button size="lg" color="primary" variant="shadow">
+            Sign Up Free
+          </Button>
+        </div>
       </div>
+
+      <Footer />
     </main>
   );
 }

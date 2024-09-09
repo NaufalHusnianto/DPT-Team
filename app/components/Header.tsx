@@ -15,6 +15,9 @@ import {
 } from "@nextui-org/react";
 import { AcmeLogo } from "./icon/AcmeLogo";
 import { SearchIcon } from "./icon/SearchIcon";
+import { Prata } from "next/font/google";
+
+const prata = Prata({ subsets: ["latin"], weight: "400" });
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -41,24 +44,26 @@ export default function Header() {
         />
         <NavbarBrand>
           <AcmeLogo />
-          <p className="font-bold text-inherit">ArtFusion</p>
+          <p className={`${prata.className} font-bold text-inherit`}>
+            ArtFusion
+          </p>
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem isActive>
-          <Link aria-current="page" href="#">
+          <Link aria-current="page" href="/">
             Find Design
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="#" color="foreground">
-            Inspiration
+          <Link href="/gallery" color="foreground">
+            Gallery
           </Link>
         </NavbarItem>
         <NavbarItem>
           <Link color="foreground" href="#">
-            Jobs
+            Artist
           </Link>
         </NavbarItem>
         <NavbarItem>
@@ -75,7 +80,13 @@ export default function Header() {
           <Link href="#">Login</Link>
         </NavbarItem> */}
         <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat" size="sm">
+          <Button
+            as={Link}
+            color="primary"
+            href="/SignIn"
+            variant="flat"
+            size="sm"
+          >
             Sign In
           </Button>
         </NavbarItem>
