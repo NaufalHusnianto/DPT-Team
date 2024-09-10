@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
@@ -106,7 +107,7 @@ export default function Blog() {
               key={index}
               className="p-4 rounded-lg shadow-md transition-transform duration-300 ease-in-out hover-neon group-hover:opacity-50 hover:!opacity-100"
             >
-              <img
+              <Image
                 src={item.img}
                 alt={item.title}
                 className="w-full h-40 object-cover rounded-t-lg mb-4"
