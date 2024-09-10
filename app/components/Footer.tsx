@@ -1,12 +1,13 @@
 "use client";
 
 import { Prata } from "next/font/google";
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const prata = Prata({ subsets: ["latin"], weight: "400" });
 
 export default function Footer() {
   return (
-    <footer className="bg-background text-foreground py-12">
+    <footer className="bg-background text-foreground py-12 border-t border-foreground-100 mt-8">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-8 px-6">
         {/* Brand and Description */}
         <div className="flex flex-col items-center md:items-start">
@@ -27,13 +28,13 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="/about" className="hover:text-primary transition">
-                About Us
+              <a href="/blog" className="hover:text-primary transition">
+                Blog
               </a>
             </li>
             <li>
-              <a href="/contact" className="hover:text-primary transition">
-                Contact
+              <a href="/about" className="hover:text-primary transition">
+                About Us
               </a>
             </li>
             <li>
@@ -52,25 +53,25 @@ export default function Footer() {
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-primary transition"
+              className="hover:text-primary transition flex gap-1 items-center"
             >
-              <i className="fab fa-facebook-f"></i> Facebook
+              <FaFacebook /> Facebook
             </a>
             <a
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-primary transition"
+              className="hover:text-primary transition flex gap-1 items-center"
             >
-              <i className="fab fa-instagram"></i> Instagram
+              <FaInstagram /> Instagram
             </a>
             <a
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-primary transition"
+              className="hover:text-primary transition flex gap-1 items-center"
             >
-              <i className="fab fa-twitter"></i> Twitter
+              <FaTwitter /> Twitter
             </a>
           </div>
         </div>

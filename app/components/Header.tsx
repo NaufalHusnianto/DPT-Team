@@ -23,41 +23,47 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
+    { name: "Find Design", href: "/gallery" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "Artist", href: "#" },
+    { name: "Blog", href: "/blog" },
+    { name: "Hire Freelancer", href: "#" },
+    { name: "My Settings", href: "#" },
+    { name: "Team Settings", href: "#" },
+    { name: "Help & Feedback", href: "#" },
+    { name: "Log Out", href: "#" },
   ];
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} isBordered isBlurred maxWidth="xl">
+    <Navbar
+      onMenuOpenChange={setIsMenuOpen}
+      isBordered
+      isBlurred
+      maxWidth="full"
+    >
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
         <NavbarBrand>
-          <AcmeLogo />
-          <p className={`${prata.className} font-bold text-inherit`}>
-            ArtFusion
-          </p>
+          <Link href="/" color="foreground">
+            <AcmeLogo />
+            <p className={`${prata.className} font-bold text-inherit`}>
+              ArtFusion
+            </p>
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem isActive>
-          <Link aria-current="page" href="/">
+          <Link aria-current="page" href="/gallery">
             Find Design
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="/gallery" color="foreground">
+          <Link color="foreground" href="/gallery">
             Gallery
           </Link>
         </NavbarItem>
@@ -76,7 +82,6 @@ export default function Header() {
             Hire Freelancer
           </Link>
         </NavbarItem>
-        
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
@@ -109,10 +114,10 @@ export default function Header() {
                   : "foreground"
               }
               className="w-full"
-              href="#"
+              href={item.href}
               size="lg"
             >
-              {item}
+              {item.name}
             </Link>
           </NavbarMenuItem>
         ))}

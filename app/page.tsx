@@ -6,6 +6,18 @@ import { FeaturesSectionDemo } from "./components/FeaturesSection";
 import { InfiniteMovingCards } from "./components/ui/infinite-moving-card";
 import { Prata } from "next/font/google";
 import Footer from "./components/Footer";
+import {
+  SiAdobe,
+  SiAmazon,
+  SiApple,
+  SiCanva,
+  SiFigma,
+  SiFramer,
+  SiGoogle,
+  SiMeta,
+  SiMicrosoft,
+  SiTwitch,
+} from "react-icons/si";
 
 const prata = Prata({ subsets: ["latin"], weight: "400" });
 
@@ -15,7 +27,7 @@ export default function Home() {
       <Header />
 
       <BackgroundBeamsWithCollision>
-        <div className="flex flex-col items-center lg:min-h-screen max-w-6xl px-24 lg:py-28 py-12 gap-6">
+        <div className="flex flex-col items-center lg:min-h-screen max-w-6xl px-24 py-20 gap-4">
           <h1
             className={`${prata.className} lg:text-6xl text-4xl font-bold text-center lg:max-w-5xl max-w-sm`}
           >
@@ -30,7 +42,7 @@ export default function Home() {
           </p>
           <Button
             color="primary"
-            variant="shadow"
+            variant="bordered"
             endContent={<BiChevronRight />}
             className="max-w-sm"
           >
@@ -49,7 +61,7 @@ export default function Home() {
 
       <FeaturesSectionDemo />
 
-      <div className="flex flex-col justify-center items-center h-96 border-b border-t border-foreground-100">
+      <div className="flex flex-col justify-center items-center pt-12 px-12 border-t border-foreground-100">
         <h1 className={`${prata.className} text-5xl`}>
           Join our 80M+ users today
         </h1>
@@ -65,9 +77,45 @@ export default function Home() {
             defaultValue="user@email.com"
             className="max-w-xs"
           />
-          <Button size="lg" color="primary" variant="shadow">
+          <Button size="lg" color="primary" variant="flat">
             Sign Up Free
           </Button>
+        </div>
+
+        <div className="p-8 w-full mt-4">
+          <h1 className={`text-2xl text-center`}>Our Partners</h1>
+          <div className="grid grid-cols-3 lg:grid-cols-10 gap-4 mt-6">
+            <h4 className="text-6xl font-bold flex items-center">
+              <SiFigma />
+            </h4>
+            <h4 className="text-6xl font-bold flex items-center">
+              <SiCanva />
+            </h4>
+            <h4 className="text-6xl font-bold flex items-center">
+              <SiAdobe />
+            </h4>
+            <h4 className="text-6xl font-bold flex items-center">
+              <SiFramer />
+            </h4>
+            <h4 className="text-6xl font-bold flex items-center">
+              <SiMicrosoft />
+            </h4>
+            <h4 className="text-6xl font-bold flex items-center">
+              <SiGoogle />
+            </h4>
+            <h4 className="text-6xl font-bold flex items-center">
+              <SiAmazon />
+            </h4>
+            <h4 className="text-6xl font-bold flex items-center">
+              <SiTwitch />
+            </h4>
+            <h4 className="text-6xl font-bold flex items-center">
+              <SiMeta />
+            </h4>
+            <h4 className="text-6xl font-bold flex items-center">
+              <SiApple />
+            </h4>
+          </div>
         </div>
       </div>
 
