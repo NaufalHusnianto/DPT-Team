@@ -25,7 +25,7 @@ export default function Header() {
   const menuItems = [
     { name: "Find Design", href: "/gallery" },
     { name: "Gallery", href: "/gallery" },
-    { name: "Artist", href: "#" },
+    { name: "Artist", href: "/artist" },
     { name: "Blog", href: "/blog" },
     { name: "Hire Freelancer", href: "#" },
     { name: "My Settings", href: "#" },
@@ -58,7 +58,7 @@ export default function Header() {
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem isActive>
-          <Link aria-current="page" href="/gallery">
+          <Link aria-current="page" href="/">
             Find Design
           </Link>
         </NavbarItem>
@@ -68,7 +68,7 @@ export default function Header() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link color="foreground" href="/artist">
             Artist
           </Link>
         </NavbarItem>

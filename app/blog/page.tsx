@@ -9,7 +9,7 @@ export default function Blog() {
     {
       title:
         "Combining Traditional and Modern Heritage in Indonesian Graphic Design",
-      img: "/images/blog/1.jpeg", 
+      img: "/images/blog/1.jpeg",
     },
     {
       title: "The Influence of Modern Western Art in Indonesian Graphic Design",
@@ -111,6 +111,8 @@ export default function Blog() {
                 src={item.img}
                 alt={item.title}
                 className="w-full h-40 object-cover rounded-t-lg mb-4"
+                width={400}
+                height={400}
               />
               <h2 className="text-xl font-semibold mb-4">{item.title}</h2>
               <p className="text-gray-600 text-justify">
