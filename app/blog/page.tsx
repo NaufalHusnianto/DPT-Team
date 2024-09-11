@@ -9,7 +9,7 @@ export default function Blog() {
     {
       title:
         "Combining Traditional and Modern Heritage in Indonesian Graphic Design",
-      img: "/images/blog/1.jpeg", // Ganti dengan path gambar yang sesuai
+      img: "/images/blog/1.jpeg", 
     },
     {
       title: "The Influence of Modern Western Art in Indonesian Graphic Design",
@@ -105,7 +105,7 @@ export default function Blog() {
           {blogs.map((item, index) => (
             <div
               key={index}
-              className="p-4 rounded-lg shadow-md transition-transform duration-300 ease-in-out hover-neon group-hover:opacity-50 hover:!opacity-100"
+              className="p-4 rounded-lg shadow-md transition-transform duration-300 ease-in-out hover:border hover-neon group-hover:opacity-50 hover:!opacity-100"
             >
               <Image
                 src={item.img}
@@ -113,11 +113,11 @@ export default function Blog() {
                 className="w-full h-40 object-cover rounded-t-lg mb-4"
               />
               <h2 className="text-xl font-semibold mb-4">{item.title}</h2>
-              <p className="text-gray-600">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+              <p className="text-gray-600 text-justify">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Pariatur necessitatibus magni sunt ipsum non minima nobis quae
+                corporis. Fugiat cupiditate placeat dicta illum illo velit
+                dolores expedita quae hic sed.
               </p>
             </div>
           ))}
